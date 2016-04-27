@@ -3,13 +3,136 @@
 <!DOCTYPE html>
 
 <html lang="en">
-    <head>
-        <title>Play 2.4 + Slick 3.1.0 example</title>
-        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
-        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
-        <script src="@routes.Assets.versioned("javascripts/hello.js")" type="text/javascript"></script>
-    </head>
-    <body>
-        @content
-    </body>
+
+<head>
+    <title>Play 2.4 + Slick 3.1.0 example</title>
+
+
+    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("vendor_bootstrap/css/scrolling-nav.css")">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("vendor_bootstrap/css/bootstrap.css")">
+    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("vendor_bootstrap/css/bootstrap.min.css")">
+
+    <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
+
+
+    <!--<script src="@routes.Assets.versioned("vendor_bootstrap/js/bootstrap.js")" type="text/javascript"></script>
+
+    <script src="@routes.Assets.versioned("vendor_bootstrap/js/bootstrap.min.js")" type="text/javascript"></script> -->
+
+
+</head>
+
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body>
+<style type="text/css" scoped>
+     .scrollspy-example {
+    position: relative;
+    height: 80%;
+    margin-top: .5rem;
+    overflow: auto; }
+
+
+    /*YOUR CSS SHOULD LOOK LIKE THIS*/
+
+
+
+/* unvisited link grey */
+#top-menu a:link {
+	color: #777;
+
+	display: block;
+	padding: 2px 0px 2px 10px;
+
+}
+/* visited link grey */
+#top-menu a:visited {
+	color: #777;
+}
+/* mouse over link blue */
+#top-menu a:hover {
+	background-color: black;
+	border-left: thick solid red;
+}
+/* selected link blue */
+#top-menu a:active {
+	color: #0CF;
+}
+/* !IMPORTANT ONLY ADD THIS CLASS TO YOUR ACTIVE PAGE LINK ( Color Blue )*/
+.activePage a {
+	color: #0CF !important
+}
+</style>
+<!-- Actual scrollspy markup: -->
+<nav id="top-menu" class="navbar navbar-default">
+    <h3 class="navbar-brand">MavenCode</h3>
+    <ul class="nav nav-pills">
+        <li class="nav-item activePage"><a class="nav-link " href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+    </ul>
+</nav>
+<div data-spy="scroll" data-target="#navbar-example2" data-offset="0" class="scrollspy-example">
+    <!-- Intro Section -->
+    <section id="intro" class="intro-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Scrolling Nav</h1>
+                    <p><strong>Usage Instructions:</strong> Make sure to include the <code>scrolling-nav.js</code>, <code>jquery.easing.min.js</code>,
+                        and <code>scrolling-nav.css</code> files. To make a link smooth scroll to another section on the
+                        page, give the link the <code>.page-scroll</code> class and set the link target to a corresponding
+                        ID on the page.</p>
+                    <a class="btn btn-default page-scroll" href="#about">Click Me to Scroll Down!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>About Section</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Services Section</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Contact Section</h1>
+                    @content
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+</div>
+
+</body>
+
+
 </html>
